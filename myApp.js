@@ -15,7 +15,7 @@ app.get("/json", (req, res) => {
   });
 });
 
-app.use((req, res, next) => {
+app.use(function middleware(req, res, next) {
   console.log(`${req.method} ${req.path} - ${req.ip}`);
   next();
 });
