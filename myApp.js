@@ -15,10 +15,10 @@ app.get("/json", (req, res) => {
   });
 });
 
-app.use(function middleware(req, res, next) {
+app.use((req, res, next) => {
   console.log(`${req.method} ${req.path} - ${req.ip}`);
   next();
 });
-console.log("Hello World!");
+// console.log("Hello World!");
 
 module.exports = app;
