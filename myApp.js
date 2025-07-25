@@ -33,8 +33,13 @@ app.get(
 
 app.get("/:word/echo", (req, res, next) => {
   const word = req.params.word;
-
   res.send({ echo: word });
+});
+
+app.route("/name").get((req, res) => {
+  const firstName = req.query.first;
+  const lastName = req.query.last;
+  res.json({ name: `${firstName} ${lastName}` });
 });
 
 console.log("Hello World!");
