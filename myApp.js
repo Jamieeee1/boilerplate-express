@@ -1,5 +1,4 @@
-const start = require("dotenv").config();
-
+require("dotenv").config({ path: "./.env" });
 let express = require("express");
 let app = express();
 
