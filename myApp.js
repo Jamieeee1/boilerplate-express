@@ -14,6 +14,11 @@ app.get("/json", (req, res) => {
       process.env.MESSAGE_STYLE === "uppercase" ? "HELLO JSON" : "Hello json",
   });
 });
+
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.path} - ${req.ip}`);
+  next();
+});
 console.log("Hello World!");
 
 module.exports = app;
